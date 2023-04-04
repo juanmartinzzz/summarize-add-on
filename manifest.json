@@ -3,6 +3,7 @@
         "js": [
             "src/common/js/dom-manipulation.js",
             "src/globals.js",
+            "src/state.js",
             "src/ui-elements.js",
             "src/content-script.js"
         ],

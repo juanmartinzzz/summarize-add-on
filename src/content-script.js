@@ -6,9 +6,9 @@ const actionMenuElementId = 'summarizeGPTActionMenu';
 const summaryCardElementId = 'summarizeGPTSummaryCard';
 
 // ChatGPT config
+// TODO: move to state
 const temperature = 0.7;
 const model = 'gpt-3.5-turbo';
-const APIKey = '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';
 const completionsEndpoint = 'https://api.openai.com/v1/chat/completions';
 
 /**
@@ -21,11 +21,13 @@ const getChatCompletion = async ({ prompt, commandKey }) => {
 
     const content = `${prompt} ${commandMap[commandKey]}`;
 
+    console.log({state});
+
     const response = await fetch(completionsEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${APIKey}`
+            Authorization: `Bearer ${state.apiKey}`
         },
         body: JSON.stringify({
             model,
