@@ -1,3 +1,9 @@
+const elementIds = {
+    summarizeContainer: 'summarizeContainer',
+    summarizeConfigForm: 'summarizeConfigForm',
+    summarizeApiKeyInput: 'summarizeApiKeyInput'
+}
+
 const commandKeys = {
     regularSmall: 'regularSmall',
     regularMedium: 'regularMedium',
