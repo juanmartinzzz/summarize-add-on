@@ -1,0 +1,20 @@
+{
+    "content_scripts": [{
+        "js": [
+            "src/common/js/dom-manipulation.js",
+            "src/globals.js",
+            "src/ui-elements.js",
+            "src/content-script.js"
+        ],
+        "css": ["src/content-script.css"],
+        "matches": ["<all_urls>"]
+    }],
+    "description": "Use AI to summarize selected text",
+    "icons": {
+        "48": "src/icons/icon-48.jpeg"
+    },
+    "manifest_version": 2,
+    "name": "SummarizeGPT",
+    "permissions": ["activeTab", "https://api.openai.com/*"],
+    "version": "1.0"
+}
