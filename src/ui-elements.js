@@ -5,6 +5,23 @@ const menuOptionTypes = {
     mindMap: [commandKeys.mindMapSmall, commandKeys.mindMapMedium, commandKeys.mindMapLarge],
 };
 
+const addContainer = () => {
+    const container = createElementWithAttributes({type: 'div', attributes: {id: elementIds.summarizeContainer}});
+
+    document.getElementsByTagName('body')[0].prepend(container);
+}
+
+const addConfigurationForm = () => {
+    const form = createElementWithAttributes({type: 'div', attributes: {id: elementIds.summarizeConfigForm}});
+    const apiKeyInput = createElementWithAttributes({type: 'input', attributes: {id: elementIds.summarizeApiKeyInput}});
+
+    form.append(apiKeyInput);
+
+    apiKeyInput.addEventListener('blur', ({target}) => {console.log({target}); state.apiKey = target.value});
+
+    document.getElementById(elementIds.summarizeContainer).append(form);
+}
+
 const removeElementById = ({ id }) => {
     const element = document.getElementById(id);
     if (element) {
@@ -81,3 +98,6 @@ const addActionMenu = ({ element }) => {
     // element.parentElement.appendChild(actionMenu);
     Array.from(document.getElementsByTagName('body'))[0].appendChild(actionMenu);
 }
+
+addContainer();
+addConfigurationForm();

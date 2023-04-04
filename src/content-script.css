@@ -1,6 +1,16 @@
-/*
-* menu
-*/
+/* container */
+#summarizeContainer {
+    position: absolute;
+    right: 0;
+    z-index: 99999;
+}
+#summarizeApiKeyInput {
+    font-size: 8px;
+    width: 32px;
+    opacity: 0.1;
+}
+
+/* menu */
 .actionMenu {
     position: fixed; 
     top: 15px;
@@ -60,16 +70,12 @@
 }
     
 
-/*
-* buttons
-*/
+/* buttons */
 .iconButton {
     cursor: pointer;
 }
 
-/*
-* card
-*/
+/* card */
 .card {
     position: fixed; 
     top: 15px; 
