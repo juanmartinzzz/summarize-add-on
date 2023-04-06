@@ -1,21 +1,36 @@
 {
-    "content_scripts": [{
-        "js": [
-            "src/common/js/dom-manipulation.js",
-            "src/globals.js",
-            "src/state.js",
-            "src/ui-elements.js",
-            "src/content-script.js"
-        ],
-        "css": ["src/content-script.css"],
-        "matches": ["<all_urls>"]
-    }],
+    "browser_action": {
+        "default_icon": "src/icons/icon-48.jpeg",
+        "default_title": "SummarizeGPT",
+        "default_popup": "src/popup/config.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "src/common/js/dom-manipulation.js",
+                "src/globals.js",
+                "src/state.js",
+                "src/ui-elements.js",
+                "src/content-script.js"
+            ],
+            "css": [
+                "src/content-script.css"
+            ],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
     "description": "Use AI to summarize selected text",
     "icons": {
         "48": "src/icons/icon-48.jpeg"
     },
     "manifest_version": 2,
     "name": "SummarizeGPT",
-    "permissions": ["activeTab", "https://api.openai.com/*"],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "https://api.openai.com/*"
+    ],
     "version": "1.0"
 }

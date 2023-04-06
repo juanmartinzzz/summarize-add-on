@@ -20,14 +20,13 @@ const getChatCompletion = async ({ prompt, commandKey }) => {
     }
 
     const content = `${prompt} ${commandMap[commandKey]}`;
-
-    console.log({state});
+    const apiKey = (await browser.storage.local.get('apiKey')).apiKey;
 
     const response = await fetch(completionsEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${state.apiKey}`
+            Authorization: `Bearer ${apiKey}`
         },
         body: JSON.stringify({
             model,
