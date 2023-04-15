@@ -1,7 +1,16 @@
+const containerStates = {
+    dormant: 'dormant',
+    showingActions: 'showingActions',
+    loading: 'loading',
+    showingResults: 'showingResults',
+}
+
 const elementIds = {
-    summarizeContainer: 'summarizeContainer',
-    summarizeConfigForm: 'summarizeConfigForm',
-    summarizeApiKeyInput: 'summarizeApiKeyInput'
+    container: 'summarizeContainer',
+    actionMenu: 'summarizeActionMenu',
+    resultsCard: 'summarizeResultsCard',
+    summarizeApiKeyInput: 'summarizeApiKeyInput',
+    loadingIndicator: 'summarizeLoadingIndicator',
 }
 
 const commandKeys = {
